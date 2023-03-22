@@ -25,7 +25,7 @@ export default function Sincronizar() {
           UnidadMedida: "cx",
         }
       ).then((response) => {
-        Axios.put(`/atualizardemanda/${idConferencias}`, {
+        Axios.put(`/atualizardemanda/${idConferencia}`, {
           Status: "Finalizado",
           Iniciado: horaInicio,
           Finalizado: new Date(),
