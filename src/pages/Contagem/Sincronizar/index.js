@@ -87,7 +87,7 @@ export default function Sincronizar() {
       <br></br>
       <br></br>
       Itens a Sincronizar<br></br>
-      {verItens.length}
+      {verItens?.length}
     </div>
   );
 }

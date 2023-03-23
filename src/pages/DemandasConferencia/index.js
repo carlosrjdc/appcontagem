@@ -23,6 +23,7 @@ export default function DemandasConferencia() {
         identificador: idRef,
       })
     );
+    setShow(false);
     navigate("/contagem", { state: { idConferencia: idRef } });
   }
 
