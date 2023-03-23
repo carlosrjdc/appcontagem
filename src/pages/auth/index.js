@@ -21,7 +21,7 @@ export default function Autenticar() {
           <Form.Label>Usuario</Form.Label>
           <Form.Control
             onChange={(e) => setUsuario(e.target.value)}
-            type="text"
+            type="numeric"
             placeholder="ID"
           />
           <Form.Label>Senha</Form.Label>
