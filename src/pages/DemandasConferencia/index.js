@@ -7,14 +7,14 @@ import ModalConfirmacao from "../../components/Modal/index.js";
 export default function DemandasConferencia() {
   const [demandaConferencia, setDemandaConferencia] = useState([]);
   const [show, setShow] = useState(false);
-  const [idRef, setIdRef] = useState("");
+
   const verificarData = localStorage.getItem("inicioContagem");
 
   const navigate = useNavigate();
   const tkn = localStorage.getItem("tkn");
   const iddata = localStorage.getItem("id");
 
-  function InicialConferencia() {
+  function InicialConferencia(idRef) {
     localStorage.setItem("idConferencia", idRef);
     localStorage.setItem(
       "inicioContagem",
@@ -59,10 +59,8 @@ export default function DemandasConferencia() {
             onClick={() => {
               if (!verificarData) {
                 setShow(true);
-                setIdRef(item.id);
               } else {
-                setIdRef(item.id);
-                InicialConferencia();
+                InicialConferencia(item.id);
               }
             }}
           >

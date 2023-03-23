@@ -1,6 +1,7 @@
+import { useLocation } from "react-router-dom";
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { useLocation } from "react-router-dom";
+
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Paper from "@mui/material/Paper";
@@ -8,7 +9,7 @@ import Cadastro from "./Cadastro";
 import Lista from "./Lista";
 import FunctionContagem from "./functionContagem";
 import Sincronizar from "./Sincronizar";
-import Etapas from "./Stepper";
+
 import Sair from "./Logout";
 
 export default function Contagem() {
@@ -19,7 +20,7 @@ export default function Contagem() {
   const ref = React.useRef(null);
   const location = useLocation();
 
-  let dadosId = location.state.idConferencia;
+  let dadosId = localStorage.getItem("idConferencia");
 
   React.useEffect(() => {
     FunctionContagem.carregarDados(
