@@ -10,6 +10,8 @@ export default function Sincronizar() {
   const horaInicio = localStorage.getItem("inicioContagem");
   const idConferencia = localStorage.getItem("idConferencia");
 
+  const verItens = JSON.parse(localStorage.getItem("contagemAtualizar"));
+
   async function UploadDados() {
     const dadosAtualizar = JSON.parse(
       localStorage.getItem("contagemAtualizar")
@@ -56,38 +58,36 @@ export default function Sincronizar() {
   return (
     <div style={{ textAlign: "center" }}>
       <ModalConfirmacao ver={show} setarver={setShow} funcao={UploadDados} />
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label> Sincronizar </Form.Label> <br></br>
-          <Form.Text className="text-muted">
-            para Sincronizar, você precisar estar conectado a internet.
-          </Form.Text>
-          <br></br>
-          <br></br>
-          {navigator.onLine ? (
-            <div
-              style={{ color: "green", fontWeight: "bold", fontSize: "20px" }}
-            >
-              Conectado
-            </div>
-          ) : (
-            <div style={{ color: "red", fontWeight: "bold", fontSize: "20px" }}>
-              Deconectado
-            </div>
-          )}
-        </Form.Group>
-
-        <div style={{ textAlign: "center" }}>
-          <Button
-            onClick={() => setShow(true)}
-            disabled={!navigator.onLine}
-            variant="primary"
-            size="sm"
-          >
-            Proximo
-          </Button>
+      <Form.Label> Sincronizar </Form.Label> <br></br>
+      <Form.Text className="text-muted">
+        para Sincronizar, você precisar estar conectado a internet.
+      </Form.Text>
+      <br></br>
+      <br></br>
+      {navigator.onLine ? (
+        <div style={{ color: "green", fontWeight: "bold", fontSize: "20px" }}>
+          Conectado
         </div>
-      </Form>
+      ) : (
+        <div style={{ color: "red", fontWeight: "bold", fontSize: "20px" }}>
+          Deconectado
+        </div>
+      )}
+      <div style={{ textAlign: "center" }}>
+        <Button
+          onClick={() => setShow(true)}
+          disabled={!navigator.onLine}
+          variant="primary"
+          size="sm"
+        >
+          Proximo
+        </Button>
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      Itens a Sincronizar<br></br>
+      {verItens.length}
     </div>
   );
 }
