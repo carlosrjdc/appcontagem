@@ -11,7 +11,7 @@ export default function CadastroSku(props) {
     <div style={{ textAlign: "center" }}>
       <Form.Label>Material</Form.Label>
       <Form.Control
-        type="numeric"
+        type="number"
         placeholder="SKU"
         value={material}
         onChange={(e) => setar(e.target.value)}

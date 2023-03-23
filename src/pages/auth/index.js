@@ -21,13 +21,13 @@ export default function Autenticar() {
           <Form.Label>Usuario</Form.Label>
           <Form.Control
             onChange={(e) => setUsuario(e.target.value)}
-            type="numeric"
+            type="number"
             placeholder="ID"
           />
           <Form.Label>Senha</Form.Label>
           <Form.Control
             onChange={(e) => setSenha(e.target.value)}
-            type="text"
+            type="password"
             placeholder="Senha"
           />
         </Form.Group>

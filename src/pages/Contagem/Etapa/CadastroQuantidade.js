@@ -17,7 +17,7 @@ export default function CadastroQuantidade(props) {
     <div style={{ textAlign: "initial" }}>
       <Form.Label>Quantidade</Form.Label>
       <Form.Control
-        type="numeric"
+        type="number"
         placeholder="Quantidade em Caixas"
         value={qtdcx}
         onChange={(e) => setarcx(e.target.value)}
@@ -27,7 +27,7 @@ export default function CadastroQuantidade(props) {
         informe a quantidade encontrada em Caixas, em caso de vazia digite 0 .
       </Form.Text>
       <Form.Control
-        type="numeric"
+        type="number"
         placeholder="Quantidade em Unidades"
         value={qtdun}
         onChange={(e) => setarun(e.target.value)}

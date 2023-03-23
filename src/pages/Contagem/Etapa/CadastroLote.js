@@ -9,7 +9,7 @@ export default function CadastroLote(props) {
     <div>
       <Form.Label>Lote</Form.Label>
       <Form.Control
-        type="numeric"
+        type="number"
         placeholder="Lote"
         value={lote}
         onChange={(e) => setar(e.target.value)}
