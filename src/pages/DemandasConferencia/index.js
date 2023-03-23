@@ -44,7 +44,9 @@ export default function DemandasConferencia() {
       <ModalConfirmacao
         ver={show}
         setarver={setShow}
-        funcao={InicialConferencia}
+        funcao={() => {
+          InicialConferencia(idRef);
+        }}
       />
       {demandaConferencia.map((item) => {
         return (
