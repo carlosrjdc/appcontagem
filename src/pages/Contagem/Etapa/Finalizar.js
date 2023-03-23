@@ -36,21 +36,19 @@ export default function Finalizar(props) {
 
   return (
     <div>
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Text className="text-muted">
-            ENDEREÇO: {data.endereco} <br></br>
-            SKU: {data?.descMaterial?.Sku} <br></br>
-            {data?.descMaterial?.Descricao} <br></br>
-            Empresa: {data?.descMaterial?.Hierarquia} <br></br>
-            Segmento: {data?.descMaterial?.Familia} <br></br>
-            <br></br>
-            Quantidade Caixas: {data?.quantidadecx} <br></br>
-            Quantidade Unidade: {data?.quantidadeun} <br></br>
-          </Form.Text>
-        </Form.Group>
-        <div style={{ textAlign: "center" }}></div>
-      </Form>
+      <Form.Text className="text-muted">
+        ENDEREÇO: {data.endereco} <br></br>
+        SKU: {data?.descMaterial?.Sku} <br></br>
+        {data?.descMaterial?.Descricao} <br></br>
+        Empresa: {data?.descMaterial?.Hierarquia} <br></br>
+        Segmento: {data?.descMaterial?.Familia} <br></br>
+        <br></br>
+        Quantidade Caixas: {data?.quantidadecx} <br></br>
+        Quantidade Unidade: {data?.quantidadeun} <br></br>
+      </Form.Text>
+
+      <div style={{ textAlign: "center" }}></div>
+
       <div>
         <Button onClick={FinalizarContagem} variant="primary" size="sm">
           Finalizar
