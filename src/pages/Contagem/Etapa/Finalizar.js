@@ -43,9 +43,10 @@ export default function Finalizar(props) {
     <div
       style={{
         textAlign: "center",
-        fontSize: "22px",
+        fontSize: "18px",
         marginTop: "10.5%",
         fontWeight: "bold",
+        color: "red",
       }}
     >
       <Form.Text className="text-muted">
@@ -62,6 +63,8 @@ export default function Finalizar(props) {
       <div style={{ textAlign: "center" }}></div>
 
       <div>
+        <br></br>
+        <br></br>
         <Button onClick={FinalizarContagem} variant="primary" size="sm">
           Finalizar
         </Button>
