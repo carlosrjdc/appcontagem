@@ -40,7 +40,7 @@ export default function Finalizar(props) {
   }
 
   return (
-    <div>
+    <div style={{ textAlign: "center", fontSize: "15px" }}>
       <Form.Text className="text-muted">
         ENDEREÇO: {data.endereco} <br></br>
         SKU: {data?.descMaterial?.Sku} <br></br>
