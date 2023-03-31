@@ -9,7 +9,7 @@ export default function Finalizar(props) {
   //setSkus(JSON.parse(localStorage.getItem("dataSku")));
   //localStorage.setItem("id", response.data.user);
 
-  function FinalizarContagem() {
+  async function FinalizarContagem() {
     const idFiltrado = todosDados.filter(
       (filtrar) => parseInt(filtrar.id) !== parseInt(idContagem)
     );
@@ -21,7 +21,9 @@ export default function Finalizar(props) {
     };
 
     setContagemAtualizar([...contagemAtualizar, inputDados]);
-    const arrayDados = JSON.parse(localStorage.getItem("contagemAtualizar"));
+    const arrayDados = await JSON.parse(
+      localStorage.getItem("contagemAtualizar")
+    );
     localStorage.setItem(
       "contagemAtualizar",
       JSON.stringify([...contagemAtualizar, inputDados])
