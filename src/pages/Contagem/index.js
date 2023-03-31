@@ -68,7 +68,7 @@ export default function Contagem() {
             <BottomNavigationAction label="Cadastro" />
             <BottomNavigationAction label="Lista" />
             <BottomNavigationAction label="Sincronizar" />
-            <Badge badgeContent={arrayDados?.length} color="primary"></Badge>
+
             <BottomNavigationAction label="Sair" />
           </BottomNavigation>
         </Paper>
