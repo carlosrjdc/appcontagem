@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import * as React from "react";
 import Box from "@mui/material/Box";
+import Badge from "@mui/material/Badge";
 
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
@@ -13,6 +14,7 @@ import Sincronizar from "./Sincronizar";
 import Sair from "./Logout";
 
 export default function Contagem() {
+  const arrayDados = JSON.parse(localStorage.getItem("contagemAtualizar"));
   const [value, setValue] = React.useState(0);
   const [skus, setSkus] = React.useState([]);
   const [dados, setDados] = React.useState([]);
@@ -66,6 +68,7 @@ export default function Contagem() {
             <BottomNavigationAction label="Cadastro" />
             <BottomNavigationAction label="Lista" />
             <BottomNavigationAction label="Sincronizar" />
+            <Badge badgeContent={arrayDados?.length} color="primary"></Badge>
             <BottomNavigationAction label="Sair" />
           </BottomNavigation>
         </Paper>

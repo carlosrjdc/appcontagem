@@ -3,14 +3,17 @@ import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import Notificar from "../../../components/Notificar";
 
+const dadosAtualizar = [];
+
 export default function Finalizar(props) {
   const { data, reset, setarDados, idContagem, todosDados } = props;
   const [contagemAtualizar, setContagemAtualizar] = useState([]);
+
   //setSkus(JSON.parse(localStorage.getItem("dataSku")));
   //localStorage.setItem("id", response.data.user);
 
   async function FinalizarContagem() {
-    const idFiltrado = todosDados.filter(
+    const idFiltrado = await todosDados.filter(
       (filtrar) => parseInt(filtrar.id) !== parseInt(idContagem)
     );
     const inputDados = {
@@ -20,18 +23,18 @@ export default function Finalizar(props) {
       Quantidade: data?.quantidadecx,
     };
 
-    setContagemAtualizar([...contagemAtualizar, inputDados]);
-    const arrayDados = await JSON.parse(
-      localStorage.getItem("contagemAtualizar")
-    );
-    localStorage.setItem(
-      "contagemAtualizar",
-      JSON.stringify([...contagemAtualizar, inputDados])
-    );
+    dadosAtualizar.push(inputDados);
+
+    setContagemAtualizar((contagemAtualizar) => [
+      ...contagemAtualizar,
+      inputDados,
+    ]);
+    localStorage.setItem("contagemAtualizar", JSON.stringify(dadosAtualizar));
     setarDados(idFiltrado);
     localStorage.setItem("dataContagem", JSON.stringify(idFiltrado));
+
+    console.log(dadosAtualizar);
     reset();
-    console.log(contagemAtualizar);
 
     Notificar("Sucesso", "Registro Realizado com sucesso", "success", "bottom");
   }
