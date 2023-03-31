@@ -21,6 +21,7 @@ export default function Finalizar(props) {
       materialId: data?.descMaterial?.id,
       Lote: data.lote,
       Quantidade: data?.quantidadecx,
+      Unidade: data?.quantidadeun,
     };
 
     dadosAtualizar.push(inputDados);

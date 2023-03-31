@@ -23,6 +23,7 @@ export default function Sincronizar() {
         {
           materialId: item.materialId,
           Quantidade: item.Quantidade,
+          Unidade: item.Unidade,
           Lote: item.Lote,
           UnidadMedida: "cx",
         }
