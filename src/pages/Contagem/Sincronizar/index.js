@@ -13,11 +13,11 @@ export default function Sincronizar() {
   const verItens = JSON.parse(localStorage.getItem("contagemAtualizar"));
 
   async function UploadDados() {
-    const dadosAtualizar = JSON.parse(
+    const dadosAtualizar = await JSON.parse(
       localStorage.getItem("contagemAtualizar")
     );
 
-    dadosAtualizar.map(async (item) => {
+    await dadosAtualizar.map(async (item) => {
       const atualizar = await Axios.put(
         `/atualizarcontagem/${item.idContagem}`,
         {
