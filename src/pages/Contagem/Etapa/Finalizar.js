@@ -2,6 +2,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import Notificar from "../../../components/Notificar";
+import Axios from "../../../api";
 
 const dadosAtualizar = [];
 
@@ -24,20 +25,26 @@ export default function Finalizar(props) {
       Unidade: data?.quantidadeun,
     };
 
-    dadosAtualizar.push(inputDados);
+    const atualizar = await Axios.put(
+      `/atualizarcontagem/${inputDados.idContagem}`,
+      {
+        materialId: inputDados.materialId,
+        Quantidade: inputDados.Quantidade,
+        Unidade: inputDados.Unidade,
+        Lote: inputDados.Lote,
+        UnidadMedida: "cx",
+      }
+    ).then((response) => {
+      console.log(response.data);
+      Notificar(
+        "Sucesso",
+        "Registro Realizado com sucesso",
+        "success",
+        "bottom"
+      );
+    });
 
-    setContagemAtualizar((contagemAtualizar) => [
-      ...contagemAtualizar,
-      inputDados,
-    ]);
-    localStorage.setItem("contagemAtualizar", JSON.stringify(dadosAtualizar));
-    setarDados(idFiltrado);
-    localStorage.setItem("dataContagem", JSON.stringify(idFiltrado));
-
-    console.log(dadosAtualizar);
     reset();
-
-    Notificar("Sucesso", "Registro Realizado com sucesso", "success", "bottom");
   }
 
   return (
