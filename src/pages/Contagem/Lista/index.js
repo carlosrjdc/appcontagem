@@ -10,7 +10,7 @@ export default function Lista() {
   return (
     <div style={{ textAlign: "center" }}>
       LISTA DE ENDEREÇOS:
-      {dados.map((item) => (
+      {dados?.map((item) => (
         <div
           style={{
             padding: "4%",
